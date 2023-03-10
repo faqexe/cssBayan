@@ -77,6 +77,11 @@ label {
   color: #0000ff;
 }
 
+.accordion__element:checked:active {
+  opacity: 0.7;
+  color: #0000ff;
+}
+
 .trigger {
   display: flex;
   justify-content: space-between;
@@ -102,6 +107,8 @@ label {
   overflow: hidden;
 }
 
+/* Checked toggle */
+
 .toggle:checked ~ .hidden {
   overflow: visible;
   clip: auto;
@@ -120,6 +127,8 @@ label {
   rotate: 90deg;
 }
 
+/* Animation for block */
+
 @keyframes show {
   0% {
     opacity: 0.5;
@@ -131,15 +140,21 @@ label {
   }
 }
 
+/* Add hover for desktop */
+
 @media (min-width:1920px) {
-  .accordion__element:hover>.hidden {
+  .accordion__element:hover > .hidden {
     overflow: visible;
     clip: auto;
     width: auto;
-    height: auto;
+    height: 100%;
     animation: show 1.2s ease 0s 1 normal forwards;
     margin-bottom: 1rem;
     color: #222;
+  }
+
+  .accordion__element:hover i {
+    rotate: 90deg;
   }
 }
 
