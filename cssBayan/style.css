@@ -2,72 +2,92 @@
   display: grid;
   place-items: center;
   height: 100vh;
+  background: #f5f5eb;
 }
 
-/* .accordion {
-  border: 1px solid #ccc;
-  min-width: 35.7rem;
-  height: 35.7rem;
-  overflow: hidden;
-} */
+.accordion {
+  min-width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  background: #f5f5eb;
+  padding: 0;
+}
 
-/* .accordion__header {
+.accordion__element {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  border-bottom: 1px solid #ccc;
+}
+
+.accordion__element:active {
+  opacity: 0.8;
+  color: #0000FF;
+}
+
+.trigger {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px 0 20px;
-  border-bottom: 1px solid #ccc;
-  height: 50px;
-  margin-bottom: 10px;
+  font-size: 1.2rem;
+  font-family: "Comic Neue", cursive;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  padding: 0.1rem 0 0.1rem 0;
+}
+
+.toggle {
+  position: absolute;
+  display: none;
 }
 
 i {
-  rotate: 45deg;
-}
-
-.accordion__header:hover i {
+  display: inline-block;
   rotate: 90deg;
 }
-
-.accordion__header:hover {
-  height: auto;
+span {
+  display: inline-block;
+  text-align: left;
 }
 
-.accordion__header:hover ~ .accordion__image {
+img {
+  width: 22em;
+  height: 22em;
+}
+
+label {
+  margin: 1rem 0 1rem 0;
+}
+
+.hidden {
+  display: none;
+  cursor: pointer;
+}
+
+.toggle:checked ~ .hidden {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-width: 100%;
+  width: auto;
   height: auto;
   animation: show 1.2s ease 0s 1 normal forwards;
+  margin-bottom: 1rem;
+  color: #222;
 }
 
 @keyframes show {
   0% {
+    opacity: 0.5;
     transform: scale(0.8);
   }
   100% {
+    opacity: 1;
     transform: scale(1);
   }
-}
-
-.accordion__image {
-  display: none;
-}
-
-.accordion img:active {
-  opacity: 0.5;
-} */
-
-.accordion {
-  margin: 0;
-  padding: 0;
-  margin-bottom: 1.5rem;
-  list-style: none;
-}
-
-.accordion__element-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
