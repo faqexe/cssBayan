@@ -1,3 +1,5 @@
+
+
 body {
   font-family: "Comic Neue", cursive;
   font-weight: bold;
@@ -6,51 +8,46 @@ body {
   color: #0000ff;
 }
 
+p {
+  margin: 0;
+}
+
 i {
   display: inline-block;
   rotate: 45deg;
   visibility: hidden;
   color: #222;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 span {
-  display: inline-block;
-  text-align: left;
-}
-
-img {
-  width: 22em;
-  height: 22em;
-}
-
-label {
-  margin: 1rem 0 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .wrapper {
   display: grid;
   place-items: center;
   height: 100vh;
-  margin: 0 auto;
 }
 
 .accordion {
-  min-width: 500px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   list-style: hidden;
   background: #f5f5eb;
-  padding: 0;
+  padding-left: 0;
 }
 
 .accordion__header {
-  width: 100%;
+  min-width: 31.25rem;
   text-align: left;
   color: #222;
-  border-bottom: 1px solid #ccc;
+  margin: 0;
+  border-bottom: 0.0625rem solid #ccc;
 }
 
 .accordion:hover i {
@@ -67,7 +64,7 @@ label {
   flex-direction: column;
   justify-content: center;
   align-items: stretch;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 0.0625rem solid #ccc;
 }
 
 .accordion__element:active,
@@ -84,12 +81,11 @@ label {
 
 .trigger {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
+  flex-direction: column;
+  justify-content: center;
   cursor: pointer;
-  padding: 0.1rem 0 0.1rem 0;
   color: #0000ff;
+  padding: 1rem 0 1rem 0;
 }
 
 .toggle {
@@ -97,9 +93,6 @@ label {
 }
 
 .hidden {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   cursor: pointer;
   clip: rect(0 0 0 0);
   height: 0;
@@ -109,14 +102,14 @@ label {
 
 /* Checked toggle */
 
-.toggle:checked ~ .hidden {
+.toggle:checked ~ label .hidden {
   overflow: visible;
   clip: auto;
   width: auto;
   height: auto;
   animation: show 1.2s ease 0s 1 normal forwards;
-  margin-bottom: 1rem;
   color: #222;
+  margin: 1rem 0 0 0;
 }
 
 .toggle:checked ~ label {
@@ -124,6 +117,10 @@ label {
 }
 
 .toggle:checked ~ label > i {
+  rotate: 90deg;
+}
+
+.accordion__element:hover i {
   rotate: 90deg;
 }
 
@@ -140,27 +137,25 @@ label {
   }
 }
 
-/* Add hover for desktop */
+/* Hover only desktop */
 
-@media (min-width:1920px) {
-  .accordion__element:hover > .hidden {
+@media (hover: hover) {
+  .accordion__element:hover > label .hidden {
     overflow: visible;
     clip: auto;
     width: auto;
     height: 100%;
     animation: show 1.2s ease 0s 1 normal forwards;
-    margin-bottom: 1rem;
     color: #222;
-  }
-
-  .accordion__element:hover i {
-    rotate: 90deg;
+    margin: 1rem 0 0 0;
   }
 }
 
-/* @media screen and (max-width: 320px) {
+/* Change fonts */
+
+@media screen and (max-width: 1920px) {
   body {
-    font-size: 90%;
+    font-size: 120%;
   }
 }
 
@@ -170,8 +165,8 @@ label {
   }
 }
 
-@media screen and (max-width: 1920px) {
+@media screen and (max-width: 320px) {
   body {
-    font-size: 70%;
+    font-size: 60%;
   }
-} */
+}
