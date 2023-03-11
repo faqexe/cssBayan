@@ -40,10 +40,11 @@ span {
   list-style: hidden;
   background: #f5f5eb;
   padding-left: 0;
+  margin: 0 auto;
+  max-width: 100vw;
 }
 
 .accordion__header {
-  min-width: 31.25rem;
   text-align: left;
   color: #222;
   margin: 0;
